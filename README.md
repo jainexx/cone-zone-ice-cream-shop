@@ -1,6 +1,6 @@
 # Cone Zone - Ice Cream Shop 🍦
 
-![Project Cover](../專案cover/霜淇淋商店%20cover.png)
+![Project Cover](./public/霜淇淋商店%20cover.png)
 
 ## 簡介
 Cone Zone 是一個以霜淇淋商店為主題的靜態頁面網站專案，使用 **HTML**、**SCSS** 與 **Bootstrap** 打造。專案旨在展示各種霜淇淋口味及甜筒種類，提供直觀易用的線上點單功能，結合簡約美觀的設計風格，讓用戶能夠輕鬆選購喜愛的冰品。
@@ -18,7 +18,7 @@ Cone Zone 是一個以霜淇淋商店為主題的靜態頁面網站專案，使�
 
 1. **Clone 專案**：
     ```bash
-    git clone https://github.com/yourusername/cone-zone-ice-cream-shop.git
+    git clone https://github.com/jainexx/cone-zone-ice-cream-shop.git
     ```
 
 2. **進入專案資料夾**：
