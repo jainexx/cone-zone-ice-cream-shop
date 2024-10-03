@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap");
+
+$mainColor: rgba(7, 13, 13, 1);
+$minorColor: rgba(115, 163, 177, 1);
+$bgColor: rgba(240, 242, 240, 1);
+
+* {
+  font-family: "Baskervville SC", serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: $bgColor;
+}
+
+#introAnimation{
+  position: fixed;
+  z-index: 5;
+  opacity: 1;
+  transition: opacity 2s ease;
+  width: 100dvw;
+  height: 100dvh;
+  background: $minorColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .flipCard{
+    background-color: $bgColor;
+    border-radius: 50%;
+    width: 10dvw;
+    height: 20dvh;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    animation: flipCard 1s forwards;
+  }
+}
+
+@keyframes flipCard {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+#navbar {
+  a {
+    color: $mainColor;
+    text-decoration: none;
+  }
+  .nav-left a,
+  .nav-right a {
+    font-size: 1.2rem;
+    transition: 0.3s;
+    &:hover {
+      background: $minorColor;
+      text-decoration: underline;
+      scale: 1.5;
+    }
+
+    &:active {
+      scale: 0.8;
+    }
+  }
+  .nav-brand img {
+    width: 3dvw;
+  }
+  .nav-brand p {
+    font-size: 1.3rem;
+  }
+}
+
+.fixedBtn {
+  position: fixed;
+  right: 0;
+  .fixedBtnContainer {
+    font-size: 1.3rem;
+    width: 5dvw;
+    background: $mainColor;
+    color: $minorColor;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    &:active {
+      background: $minorColor;
+      color: $mainColor;
+      scale: 1.4;
+    }
+  }
+}
+
+.overlay {
+  .overlayMenu {
+    position: fixed;
+    z-index: 1;
+    top: 100dvh;
+    left: 10dvw;
+    width: 80dvw;
+    height: 100dvh;
+    background: $mainColor;
+    padding: 60px;
+    transition: all 0.8s ease-out;
+  
+    .overlayContainer {
+      background-color: $bgColor;
+      margin: 0 auto;
+      padding: 2%;
+      max-width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+  
+      #menuHideBtn {
+        width: 60px;
+        height: 40px;
+        align-self: flex-end;
+        &:active {
+          background: $mainColor;
+          color: white;
+        }
+      }
+      .orderIcon {
+        width: 4rem;
+        text-align: center;
+        color: $bgColor;
+        background: $mainColor;
+        text-decoration: none;
+        margin-bottom: 2%;
+        padding-top: 1%;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          background: $minorColor;
+          color: $mainColor;
+          scale: 1.2;
+        }
+        &:active {
+          scale: 0.8;
+        }
+      }
+      .imgBlock {
+        width: 1000px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        img {
+          width: 95%;
+          height: 90%;
+        }
+      }
+    }
+  }
+  //show overlay js
+  .showOverlay {
+    transform: translateY(-100dvh);
+  }
+
+  .overlayOrder {
+    position: fixed;
+    z-index: 3;
+    top: 100dvh;
+    left: 10dvw;
+    width: 80dvw;
+    height: 80dvh;
+    background: $mainColor;
+    padding: 60px;
+    transition: all 1s ease-out;
+  
+    .overlayContainer {
+      background-color: $bgColor;
+      margin: 0 auto;
+      padding: 2%;
+      max-width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .showOverlayOrder {
+    transform: translateY(-80dvh);
+  }
+}
+
+#hero {
+  h1 {
+    width: 15rem;
+    white-space: nowrap;
+    color: $minorColor;
+    font-weight: bold;
+    font-size: 5rem;
+    &::first-letter {
+      border-bottom: 4px solid $mainColor;
+    }
+    animation: typing 6s linear 4.5s forwards; //延遲4.5秒等flipcard結束
+    overflow: hidden;
+  }
+  h2 {
+    color: $mainColor;
+    font-size: 4rem;
+  }
+  .social-links {
+    a {
+      color: $mainColor;
+      font-size: 3rem;
+    }
+  }
+
+  p {
+    font-size: 4rem;
+    margin-right: 1rem;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 15rem;
+  }
+}
+
+#carouselMenu {
+  h2 {
+    font-size: 4rem;
+    border-bottom: 2px solid $mainColor;
+  }
+  .carousel {
+    border-left: 2px solid $mainColor;
+
+    .card {
+      background: transparent;
+      border: none;
+      border-bottom: 4px solid $mainColor;
+      transition: 0.3s;
+      &:hover {
+        scale: 1.4;
+      }
+
+      img {
+        height: 70%;
+        border-bottom: 4px solid $mainColor;
+      }
+
+      .card-body {
+        height: 30%;
+      }
+    }
+  }
+
+  .cards {
+    border-right: 2px solid $mainColor;
+
+    .card {
+      width: 25%;
+      height: 30%;
+      background: transparent;
+      border: none;
+      border-bottom: 4px solid $mainColor;
+      transition: 0.3s;
+      &:hover {
+        scale: 1.4;
+      }
+
+      img {
+        height: 60%;
+        border-bottom: 4px solid $mainColor;
+      }
+
+      .card-body {
+        height: 40%;
+      }
+    }
+  }
+}
+
+#order {
+  h2 {
+    font-size: 5rem;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+    border-bottom: 2px solid $mainColor;
+    background: $minorColor;
+    transition: 0.3s;
+    &:hover {
+      scale: 1.2;
+    }
+    &:active {
+      scale: 0.8;
+    }
+  }
+}
+
+#footer {
+  h4 {
+    font-size: 1.8rem;
+  }
+  p,
+  ul {
+    font-size: 1.3rem;
+  }
+  height: 30dvh;
+  background: $mainColor;
+  color: $bgColor;
+  .footerTop {
+    height: 80%;
+    margin: 0;
+
+    a {
+      color: $bgColor;
+    }
+  }
+  .footerBottom {
+    height: 20%;
+    border-top: 2px double $bgColor;
+  }
+
+  .logoArea {
+    height: 100%;
+    background: $bgColor;
+    p {
+      color: $mainColor;
+    }
+  }
+}
+
+
